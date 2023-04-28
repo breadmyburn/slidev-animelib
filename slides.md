@@ -68,16 +68,25 @@ image: https://preview.redd.it/rtlehtomjpo51.jpg?width=1697&format=pjpg&auto=web
 
 - React.js
 - Vite.js
-- Tailwind CSS
+- ChakraUI
 
 ### Features
-
-***Context API***
-- Produces global variables that can be passed around.
 
 ***Lazy Loading (Code-Splitting)***
 - Loads only the necessary parts of an aplication when they are required rather than loading all resources at the beginning.
 - Improves performance and reduces loading times.
+
+***Redux Toolkit (RTK)***
+- Simplifies the use of Redux by providing a streamlined API and utility functions for common tasks, such as creating slices of the store, handling immutable updates, and configuring the store with middleware and dev tools.
+
+
+---
+
+# What is currently used to build AnimeLib? (cont.)
+
+***RTK Query***
+- Provides a set of APIs and utilities for managing the state of asynchronous data fetching in a Redux store. 
+- It helps to simplify the process of defining and dispatching async actions, caching data, and handling loading and error states.
 
 ---
 
@@ -89,6 +98,7 @@ image: https://preview.redd.it/rtlehtomjpo51.jpg?width=1697&format=pjpg&auto=web
 - MyBatis-Plus
 - MyBatisPlus-Plus
 - Project Lombok
+- Apache Shiro
 
 ### Database
 
@@ -110,7 +120,10 @@ main
 ├── java
 │   └── com.sunognaisda.animelib
 │       ├── application
+│       │   ├── dto
+│       │   │    └── user
 │       │   └── rest
+│       │        └── service
 │       ├── domain
 │       │   ├── mapper
 │       │   ├── model
@@ -118,12 +131,27 @@ main
 │       ├── impl
 │       │   └── domain
 │       │       └── service
+│       ├── infra
+│       │     ├── config
+│       │     │     └── api
+│       │     └── util
 │       └── AnimelibApplication.java
+...
+```
+
+---
+layout: image-right
+image: https://steamuserimages-a.akamaihd.net/ugc/763849701486576504/56894A65A59574D75D110B414CB20B8DD5D2308B/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true
+---
+
+# Project Structure in DDD (Backend) cont.
+
+```
+...
 │
 └── resources
     ├── db
     │   └── liquibase
-    ├── mapper
     ├── application.properties
     └── mybatis-config.xml
 ```
@@ -132,31 +160,25 @@ main
 
 # Database ERD
 
-![0](/assets/images/erd.png)
+![0](/assets/images/animelib_db_ERD.png)
 
----
-
-# APIs
-
-**Working**
-
-- Register
-
-**In-Progress**
-
-- Login
 
 ---
 
 # Future Implementation
 
-- Apache Shiro
+- Refactor
+- Database Normalization
+- Account Management
+- Sorting
+- Form Validation and Error Handling
+- Fully Responsive Design
+- Multiple Genres per Anime entry
+- JustAuth
 - Redisson
 - Quartz
-- JustAuth
 - Hutool
 - AutoPOI
-- Knife4j
 
 ---
 
@@ -164,7 +186,8 @@ main
 
 - Lazy loading in React | LoginRadius Blog (https://www.loginradius.com/blog/engineering/lazy-loading-in-react/)
 
-- A Guide to React Context and useContext() Hook (https://dmitripavlutin.com/react-context-and-usecontext/)
+- Installing and Using Chakra UI with React | Pluralsight (https://www.pluralsight.com/guides/installing-and-using-chakra-ui-with-react)
+- React Fetch Data with Redux Toolkit RTK Query Tutorial (https://www.positronx.io/react-fetch-data-with-redux-toolkit-rtk-query-tutorial/)
 
 - Spring Boot 2.3.12 Reference Documentation (https://docs.spring.io/spring-boot/docs/2.3.12.RELEASE/reference/html/index.html)
 
@@ -172,8 +195,20 @@ main
 
 - MyBatis-Plus (https://baomidou.com/)
 
+- MyBatis-Plus Samples (https://github.com/baomidou/mybatis-plus-samples)
+
 - MyBatisPlus-Plus (https://gitee.com/jeffreyning/mybatisplus-plus)
+
+---
+
+# References (cont.)
 
 - mybatisplus 复合主键(多主键) CRUD (https://blog.csdn.net/virtual_users/article/details/118151385)
 
 - Liquibase Documentation (https://docs.liquibase.com/home.html)
+
+- Spring JPA Demo (https://github.com/chatchatabc/spring-jpa-demo/)
+
+- Spring MyBatis Plus Account Demo (https://github.com/chatchatabc/spring-mybatis-plus-demo)
+
+- Example usage for org.apache.shiro.crypto.hash Hash getSalt (http://www.java2s.com/example/java-api/org/apache/shiro/crypto/hash/hash/getsalt-0-0.html)
